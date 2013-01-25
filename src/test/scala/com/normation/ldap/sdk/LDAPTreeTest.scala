@@ -82,10 +82,10 @@ class LDAPTreeTest {
     val optTree = LDAPTree(entries)
     assertTrue(optTree.isDefined)
     val tree = optTree.get
-    assertEquals(1,tree._children .size)
+    assertEquals(1,tree._children .size.toLong)
     val mTree = tree._children(rdn2)
     assertEquals(LDAPEntry(dn2), mTree.root)
-    assertEquals(2, mTree.children.size )
+    assertEquals(2, mTree.children.size.toLong )
     assertEquals(LDAPEntry(dn3), mTree._children(rdn3).root)
     assertEquals(LDAPEntry(new DN(rdn4,dn2)), mTree._children(rdn4).root)
   }

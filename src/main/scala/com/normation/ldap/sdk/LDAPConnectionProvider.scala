@@ -188,7 +188,7 @@ trait AnonymousConnection extends UnboundidConnectionProvider {
     new UnboundidLDAPConnection(options,host,port)
   }
 
-  override def toConnectionString = "anonymous@ldap://%s:%s".format(host,port)
+  override def toConnectionString = s"anonymous@ldap://$host:$port"
   
 }
 
@@ -209,7 +209,7 @@ trait SimpleAuthConnection extends UnboundidConnectionProvider {
     new UnboundidLDAPConnection(options,host,port,authDn,authPw)
   }
 
-  override def toConnectionString = "%s:*****@ldap://%s:%s".format(authDn,host,port)
+  override def toConnectionString = s"$authDn:*****@ldap://$host:$port"
 }
 
 
