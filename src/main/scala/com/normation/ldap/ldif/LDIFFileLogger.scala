@@ -111,7 +111,7 @@ trait Slf4jLDIFLogger extends LDIFFileLogger {
   }
 
   protected def traceFileName(dn:DN, opType:String) : String = {
-    val fileName = dn.getRDNStrings().map( _.replaceAll(File.separator, "|")).reverse.mkString("/")
+    val fileName = dn.getRDNStrings().map( _.replaceAll("\\" + File.separator, "|")).reverse.mkString("/")
     fileName + "-" + System.currentTimeMillis.toString + "-" + opType + ".ldif"
   }
 
