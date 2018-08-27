@@ -22,6 +22,9 @@ limitations under the License.
     <version>4.1.7</version>
   </parent>
 
+  <!-- includes fixes for https://www.rudder-project.org/redmine/issues/13256 -->
+  <version>4.1.7-backport-13256</version>
+
   <artifactId>scala-ldap</artifactId>
 
   <description>
